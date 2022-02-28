@@ -1,0 +1,9 @@
+name: ModuleSystem
+version: 1.0b
+main: me.mstn.plugin.BukkitModuleSystem
+commands:
+  modules:
+    aliases:
+      - модули
+      - module
+      - модуль
