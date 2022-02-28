@@ -2,15 +2,16 @@ package me.mstn.plugin.manager;
 
 import me.mstn.plugin.object.IModule;
 
+import java.util.List;
 import java.util.Set;
 
 public interface ModuleManager {
 
-    Set<IModule> getModules();
+    List<IModule> getModules();
 
-    Set<IModule> getActiveModules();
+    List<IModule> getActiveModules();
 
-    Set<IModule> getDisabledModules();
+    List<IModule> getDisabledModules();
 
     void disableModules();
 

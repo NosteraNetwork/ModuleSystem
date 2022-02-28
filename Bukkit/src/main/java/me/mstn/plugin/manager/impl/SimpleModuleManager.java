@@ -1,5 +1,6 @@
 package me.mstn.plugin.manager.impl;
 
+import lombok.Getter;
 import me.mstn.plugin.BukkitModuleSystem;
 import me.mstn.plugin.api.SimpleModuleAPI;
 import me.mstn.plugin.manager.ModuleManager;
@@ -23,9 +24,11 @@ public class SimpleModuleManager implements ModuleManager {
 
     private final BukkitModuleSystem plugin;
 
+    @Getter
     private final List<IModule> modules = new ArrayList<>();
     private final SimpleModuleAPI moduleAPI;
 
+    @Getter
     private final List<IModule> disabledModules = new ArrayList<>();
 
     public SimpleModuleManager(BukkitModuleSystem plugin, SimpleModuleAPI moduleAPI) {
@@ -151,21 +154,11 @@ public class SimpleModuleManager implements ModuleManager {
     }
 
     @Override
-    public Set<IModule> getModules() {
-        return new HashSet<>(modules);
-    }
-
-    @Override
-    public Set<IModule> getActiveModules() {
+    public List<IModule> getActiveModules() {
         return modules
                 .stream()
                 .filter(module -> !disabledModules.contains(module))
-                .collect(Collectors.toSet());
-    }
-
-    @Override
-    public Set<IModule> getDisabledModules() {
-        return new HashSet<>(disabledModules);
+                .collect(Collectors.toList());
     }
 
     @Override

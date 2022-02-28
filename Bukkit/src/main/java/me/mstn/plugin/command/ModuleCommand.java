@@ -28,7 +28,7 @@ public class ModuleCommand implements CommandExecutor {
                 .getModuleManager();
 
         if (args.length == 0) {
-            Set<IModule> modules = manager.getModules();
+            List<IModule> modules = manager.getModules();
             String message = ChatColor.WHITE + "Modules (" + modules.size() + "): ";
 
             List<String> moduleList = new ArrayList<>();
