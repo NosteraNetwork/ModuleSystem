@@ -9,8 +9,6 @@ public class Example extends IModule {
         this.getModuleSystem()
                 .getLogger()
                 .info("[ExampleModule] Module started!");
-
-
     }
 
     public void onStop() {
